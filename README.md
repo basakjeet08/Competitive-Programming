@@ -1,2 +1,1 @@
-# Java Programming
- 
+# Competitive Programming
