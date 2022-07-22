@@ -41,30 +41,16 @@ int main(){
 
     for(int i = 1;i<=T;i++){
         scanf("%d %d %ld %ld",&X,&Y,&N,&R);
-        long int count = 1;
-        int flag = 0 ;
-        long int pre_burger = 0;
-        while(count<=N){
-            long int cal = (pre_burger*Y) + (N-pre_burger)*X;
-            if((cal>R)&&(pre_burger==0)){
-                flag = 1;
-                //printf("%d",flag);
-                break;
-            }
-            else if(cal>R){
-                pre_burger--;
-                break;
-            }
-            else if(cal<R)
-                pre_burger++;
-            else
-                break;
-            count++;
-        }
-        if(flag==1)
+        if((N*Y)<=R)
+            printf("0 %ld\n",N);
+        else if((N*X)>R)
             printf("-1\n");
-        else    
+        else{
+            long int pre_burger = (R-(N*X))/(Y-X);
             printf("%ld %ld\n",(N-pre_burger),pre_burger);
+
+        }
+        
     }
     return 0;
 }
