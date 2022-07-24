@@ -13,7 +13,7 @@ int main(){
         while(M%N !=0){
             if(M%N>N/2)
                 N++;
-            else if(M%N<N/2)
+            else
                 M = M-(M%N);
         }
         printf("%d %ld\n",N,M);
