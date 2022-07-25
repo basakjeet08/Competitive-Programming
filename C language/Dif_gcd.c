@@ -1,21 +1,26 @@
 #include <stdio.h>
-
 int main(){
-    int N,T;
-    long int M;
+    int T;
+    long int M, N;
     printf(":");
-
-    scanf("%d",&T);
-
-    while(T-->0){
-        scanf("%d %ld",&N,&M);
-
-        while(M%N !=0){
-            if(M%N>N/2)
-                N++;
+    scanf("%d", &T);
+    while (T-- > 0)
+    {
+        scanf("%ld %ld", &N, &M);
+        while ((M%N) != 0)
+        {
+            long int div = M / N;
+            printf("%ld\n",div);
+            long int remainder = M % N;
+            printf("%ld\n",remainder);
+            if (div < remainder)
+                N = N + (remainder / div);
+            else if(div>remainder)
+                M = M - remainder;
             else
-                M = M-(M%N);
+                N = N + 1;
         }
-        printf("%d %ld\n",N,M);
+        printf("%ld %ld\n", N, M);
     }
+    return 0;
 }
