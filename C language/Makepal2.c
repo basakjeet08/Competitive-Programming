@@ -1,58 +1,36 @@
 #include <stdio.h>
-#include <string.h>
-
-void reverse();
-void checkPalindrome();
-void doCalculation();
-char S[20];
-char rev[20];
-int uni_count = 0;
+void printPalindrome(char[] , int, char );
 int main(){
     int T,N;
-    
     printf(":");
     scanf("%d",&T);
 
-    for(int i = 1;i<=T;i++){
+    while(T--){
         scanf("%d",&N);
         getchar();
+        char S[N];
+        char new_string[N];
         gets(S);
-        
-        for(int count = 0;count<=N/2;count++){
-            reverse();
-            checkPalindrome();
-
+        int count_0s,count_1s;
+        count_0s = count_1s = 0;
+        for(int i = 0;i<=N;i++){
+            if(S[i] == '0')
+                count_0s++;
+            else
+                count_1s++;
         }
+        if(count_0s<=N/2)
+            printPalindrome(S,N,'0');
+        else
+            printPalindrome(S,N,'1');
     }
-
     return 0;
 }
-
-void reverse(){
-    int i = 0;
-    int count = 0;
-    for(i = strlen(S)-1;i>=0;i--){
-        rev[count] = S[i];
-        count++;
+void printPalindrome(char S[],int N,char flag){
+    for(int i = 0;i<N;i++){
+        if(S[i]==flag)
+            continue;
+        printf("%c",S[i]);
     }
-    printf("%s\n",rev);
-}
-void checkPalindrome(){
-    if(strcpy(S,rev) == 0)
-        printf("%s\n",S);
-    else
-        doCalculation();
-}
-
-void doCalculation(){
-    int count;
-    for(int i = 0;i<strlen(S);i++){
-        if(S[i] != rev[i])
-            count = i;
-    }
-
-    for(int i = count;i<strlen(S)-2;i++){
-        S[i] = S[i+1];
-    }
-    uni_count++;
+    printf("\n");
 }
