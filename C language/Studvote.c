@@ -8,11 +8,10 @@ int main(){
         scanf("%d %d",&N,&K);
         int A[N];
         int B[N];
-        int C[N];
         int count = 0;
         for(int i = 0;i<N; i++){
             scanf("%d",&A[i]);
-            B[i] = C[i] = 0;
+            B[i] = 0;
         }
         for(int i = 0;i<N; i++)
             if(A[i] != (i+1))
