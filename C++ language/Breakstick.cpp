@@ -7,12 +7,8 @@ int main(){
     cin >> T;
     while(T--){
         cin >> N >> X ;
-        if(X==1)
+        if(X%2 == 1 || N%2 == 0)
             cout << "YES \n";
-        else if((X%2 == 0) && ((N-X)%2 == 0))
-            cout << "YES \n";
-        else if((X%2 == 1) && ((N-X)%2 == 1))
-            cout << "YES\n";
         else
             cout << "NO \n";
     }
