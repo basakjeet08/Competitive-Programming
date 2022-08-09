@@ -16,7 +16,7 @@ int main(){
         }
         else
             down++;
-        for(int i=1;i<S.length()-1;i++){
+        for(int i=1;i<S.length();i++){
             if((S.at(i) == 'U') && (wasUp == 0)){
                 up++;
                 wasUp = 1;
