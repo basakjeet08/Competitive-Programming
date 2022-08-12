@@ -13,13 +13,11 @@ int main(){
         if(K<ini_diff)
             ans = ini_diff - K;
         else if(K>ini_diff){
-            K = K - ini_diff;
-            ans = K%2;
+            ans = 0;
         }
         else if(K==ini_diff)
             ans = 0;
         cout << ans << endl;
-
     }
     return 0;
 }
