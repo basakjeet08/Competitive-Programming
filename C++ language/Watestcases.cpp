@@ -14,6 +14,12 @@ int main(){
         cin >> V ;
         int min = A[0];
         for(int i=0;i<N;i++)
+            if(V.at(i) == '0'){
+                min = A[i];
+                break;
+            }
+        
+        for(int i=0;i<N;i++)
             if((V.at(i) == '0') && (min > A[i]))
                 min = A[i];
 
