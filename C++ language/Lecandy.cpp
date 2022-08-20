@@ -17,7 +17,7 @@ int main(){
         if(sum <= C)
             cout << "Yes\n";
         else 
-            cout << "NO\n";
+            cout << "No\n";
     }
     return 0;
 }
