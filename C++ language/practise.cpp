@@ -10,7 +10,7 @@ int main(){
     s.push_back(20);
     s.push_back(30);
     s.push_back(40);
-    s.push_back(50);
+    s.push_back (50);
     for(int i :  s)
         cout << i << endl ;
 }
